@@ -9,30 +9,6 @@
 
 @section('content')
 
-{{-- @if (is_array($cartData) || is_object($cartData))
-@foreach ($cartData as $index => $data)
-                <form method="post" action="updateCart">
-                    @csrf
-                    <div class="itemCart">
-                        <div><img src="{{ asset('/' . $data['PhotoURL']) }}"></div>
-                        <div class="infoCart" style="color: rgb(172, 0, 0);">{{ $data['PhotoName'] }}</div>
-                        <div class="infoCart">{{ $data['PhotoPrice'] }}</div>
-                        <input type="hidden" name="index" value="{{ $index }}">
-                            <input type="submit" id="update" value="Update">
-                        </div>
-                        <div class="infoCart"><input type="submit" id="delete" name="delete" value="Delete" /></div>
-                    </div>
-                </form>
-                <hr style="border-top: 5px solid rgb(224, 224, 224);">
-            @endforeach
-            @else
-            <p style="font-size:30px; margin:30px;">Your cart is currently empty !</p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        @endif --}}
-
-
-
-        
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">YOUR CART</h1>
@@ -60,15 +36,20 @@
                                 ?>
                                 @if (is_array($cartData) || is_object($cartData))
                                 @foreach ($cartData as $index => $data)
+                                <form method="post" action="updateCart">
+                                    @csrf
                                 <?php $totalPrice+=$data['PhotoPrice'];?>
                                 <tr>
                                     <td id="photo"><img src="{{ asset('/' . $data['PhotoURL']) }}"></td>
                                     <td>{{ $data['PhotoName'] }}</td>
                                     <td>{{ $data['PhotoPrice'] }} IDR</td>
                                     <td>{{ $data['PhotoDescription']}}</td>
+                                    <input type="hidden" name="itemId" value="{{ $data['Id'] }}">
                                     <td class="text-right"></td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                    <td class="text-right"><button type="submit" id="delete" name="delete" value="Delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                    
                                 </tr>
+                                </form>
                                 @endforeach
                                 @endif
 
@@ -87,7 +68,12 @@
                                     <td></td>
                                     <td></td>
                                     <td>Shipping</td>
-                                    <td class="text-right">6,90 €</td>
+                                    @if ($cartData)
+                                    <td class="text-right">9000 IDR</td>
+                                    @else
+                                    <td class="text-right">0 IDR</td>
+                                    @endif
+                                    
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -95,7 +81,11 @@
                                     <td></td>
                                     <td></td>
                                     <td><strong>Total</strong></td>
-                                    <td class="text-right"><strong>346,90 €</strong></td>
+                                    @if ($cartData)
+                                    <td class="text-right"><strong>{{$totalPrice+9000}}</strong></td>
+                                    @else
+                                    <td class="text-right"><strong>{{$totalPrice}}</strong></td>
+                                    @endif
                                 </tr>
                             </tbody>
                         </table>
@@ -104,10 +94,15 @@
                 <div class="col mb-2">
                     <div class="row">
                         <div class="col-sm-12  col-md-6">
+                            <form action="/">
                             <button class="btn btn-block btn-light">Continue Shopping</button>
+                            </form>
                         </div>
+                        
                         <div class="col-sm-12 col-md-6 text-right">
+                            @if ($cartData)
                             <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                            @endif
                         </div>
                     </div>
                 </div>
