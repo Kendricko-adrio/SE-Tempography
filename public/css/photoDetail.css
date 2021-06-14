@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+.belah2 {
+    margin: 3vw;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    /* width: 50vw; */
+    background-color: blueviolet;
+}
+
+img {
+    width: 20vw;
+    height: 21vw;
+    transition: all 0.3s ease 0s;
+}
+
+.infobaju {
+    /* display: grid; */
+    /* grid-template-columns: 10% 90%; */
+    background-color: brown;
+}
+
+.detailContainer {
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+#judulDetail {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    margin-bottom: 7vh;
+}
+
+#gambarDetail img{
+    width: 22vw;
+    height: 23vw;
+    /* background-color: darkgrey; */
+}
+
+#detailInfos{
+    display:grid;
+    grid-template-columns: 30% 70%;
+    /* background-color: aquamarine; */
+}
+#penjelasanDetail{
+    display:grid;
+    height:40%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+
+}

@@ -3,6 +3,8 @@
 @section('head')
 <title>Home</title>
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 @stop
 
 @section('content')
@@ -21,5 +23,16 @@
     </div>
     <div class="container">
 
+        <p id="judul">Today's highlight</p>
+        <div class="row p-2">
+            @foreach ($photo as $temp)
+            <div class="col-md-4 ">
+                <a href="{{ url('/details', $temp->id) }}">
+                <div><img src="{{ asset('/' . $temp->PhotoURL) }}"></div>
+                </a>
+            </div>
+            @endforeach
+        
+        </div>
     </div>
 @stop

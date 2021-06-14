@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .jumbotron {
@@ -13,16 +13,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 .jumbotron .container {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .jumbotron .container .column {
@@ -30,20 +30,41 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 .jumbotron .container .column .detail {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .logo {
   height: 200px;
   width: 200px;
+}
+.container img {
+  width: 18vw;
+  height: 19vw;
+}
+.col-md-4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.col-md-4:hover{
+    opacity: 0.7;
+    transition:0.4s;
+
+}
+
+#judul{
+  font-size: 35px;
+  padding-left: 1vw;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 /*# sourceMappingURL=home.css.map */
