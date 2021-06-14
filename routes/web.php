@@ -25,6 +25,6 @@ Route::get('/register', function () {
     return view('register');
 });
 Route::post('/register', 'UserController@registration');
-
+Route::get('/user/{id}', 'UserController@getProfile');
 
 Route::post('/addToCart','CartController@addToCart');

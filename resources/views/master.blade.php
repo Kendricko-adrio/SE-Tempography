@@ -13,7 +13,7 @@
 <body>
     @section('navbar')
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Tempography</a>
+        <a class="navbar-brand" href="{{url('/')}}">Tempography</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,7 +57,7 @@
 
 </body>
 <br><br><br><br><br><br><br><br>
-<footer class="page-footer font-small bg-dark fixed-bottom">
+<footer class="page-footer font-small bg-dark">
 
   <!-- Footer Elements -->
   <div class="container">
