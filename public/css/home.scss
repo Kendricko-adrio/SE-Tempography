@@ -4,7 +4,36 @@
     box-sizing: border-box;
 }
 
+
+.logo {
+    height: 200px;
+    width: 200px;
+  }
+  .container img {
+    width: 18vw;
+    height: 19vw;
+  }
+  .col-md-4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .col-md-4:hover{
+      opacity: 0.7;
+      transition:0.4s;
+
+  }
+
+  #judul{
+    font-size: 35px;
+    padding-left: 1vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+
+
 .jumbotron{
+
     background: url("/image/background-jumbotron.png") no-repeat center center;
     background-size: 100% 100%;
     height: 500px;

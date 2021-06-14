@@ -16,8 +16,13 @@ Route::get('/register', function () {
 });
 
 Route::post('/register', 'UserController@registration');
+Route::get('/user/{id}', 'UserController@getProfile');
 
+// <<<<<<< HEAD
 
 Route::post('/addToCart','CartController@addToCart');
 Route::post('updateCart','CartController@updateCart');
 Route::post('/postLogin','UserController@postLogin');
+// =======
+Route::post('/addToCart','CartController@addToCart');
+// >>>>>>> 43fb14301351584ca4621af5155497b736cf48bf

@@ -1,0 +1,25 @@
+.jumbotron{
+    background-color: rgb(61, 61, 61);
+    .container{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        .description{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            .image{
+                width: 100px;
+                height: 100px;
+
+            }
+            .detail{
+                margin-left: 20px;
+                align-self: center;
+            }
+        }
+        .rating{
+            align-self: center;
+        }
+    }
+}

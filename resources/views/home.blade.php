@@ -1,3 +1,4 @@
+
 @extends('master')
 
 @section('head')
@@ -26,13 +27,13 @@
         <p id="judul">Today's highlight</p>
         <div class="row p-2">
             @foreach ($photo as $temp)
-            <div class="col-md-4 ">
+            <div class="col-md-4">
                 <a href="{{ url('/details', $temp->id) }}">
                 <div><img src="{{ asset('/' . $temp->PhotoURL) }}"></div>
                 </a>
             </div>
             @endforeach
-        
+
         </div>
     </div>
 @stop
