@@ -46,6 +46,17 @@ body, html {
   margin-top: 20px;
 }
 
+.background .login form .login-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
 .background .login form .button {
   width: 30%;
   -ms-flex-item-align: center;

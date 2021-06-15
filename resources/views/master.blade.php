@@ -21,12 +21,24 @@
             <li class="nav-item ">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
+            @if (Auth::user() == null)
             <li class="nav-item">
-              <a class="nav-link" href="{{url('/login')}}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('/register')}}">Register</a>
+                <a class="nav-link" href="{{url('/login')}}">Login</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url('/register')}}">Register</a>
+                </li>
+
+            @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/cart')}}">My Cart</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/logout')}}">Log Out</a>
+              </li>
+
+            @endif
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown

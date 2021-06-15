@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 use App\photo;
+use App\TransactionDetail;
+use App\TransactionHeader;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class CartController extends Controller
 {
@@ -16,8 +18,8 @@ class CartController extends Controller
 
         $datas=photo::where('id',$req->itemId)->first();
 
-        $cart=session()->get('shoppingCart'); 
-        
+        $cart=session()->get('shoppingCart');
+
         $data=$datas;
 
         $cart[$req->itemId]=array(
@@ -37,7 +39,32 @@ class CartController extends Controller
         return view('cart',['cartData'=>$cart]);
     }
 
-
+    public function postCart(Request $request){
+        $cart = session()->get('shoppingCart');
+        // dd($cart);
+        if($cart == 0){
+            return Redirect()->back()->withErrors(['error' => 'No Cart Found']);
+        }
+        $user = Auth::user();
+        // $header = TransactionHeader::create([
+        //     'user_id' => $user->id,
+        //     'transaction_status_id' => '2'
+        // ]);
+        $header = new TransactionHeader;
+        $header->user_id = $user->id;
+        $header->transaction_status_id = '2';
+        $header->save();
+        // dd($header->id);
+        foreach($cart as $index => $value){
+            TransactionDetail::create([
+                'transaction_id' => $header->id,
+                'photo_id' => $index
+            ]);
+        }
+        $request->session()->forget('shoppingCart');
+        // return view('home', ['success' => 'Thanks for purchasing!']);
+        return redirect('/')->with(['success' => 'Thanks for purchasing!']);
+    }
 
     public function updateCart(Request $req){
         $datas=photo::where('Id',$req->itemId)->get();
@@ -45,14 +72,14 @@ class CartController extends Controller
         foreach($datas as $temp){
             $data=$temp;
          }
-        
+
         $cart=session()->get('shoppingCart');
         if (isset($_POST['delete'])) {
             unset($cart[$req->itemId]);
         }else{
             if($req->qty<=0){
                 unset($cart[$req->itemId]);
-    
+
             }else{
                 $cart[$req->itemId]=array(
                 "itemId"=>$data->id,

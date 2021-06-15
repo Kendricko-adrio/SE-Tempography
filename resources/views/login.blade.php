@@ -12,7 +12,15 @@
             @csrf
             <input class="component" type="text" placeholder="Email" name="email">
             <input class="component" type="password" placeholder="Password" name="password">
-            <input class="component button btn-danger btn" type="submit" value="Login">
+            <span class="component login-button">
+                <div>
+                    <input class="button btn-danger btn" type="submit" value="Login">
+                    <input type="checkbox" value="remember" name="remember" id="">
+                    <label for="">Remember Me</label>
+                </div>
+            </span>
+
+
         </form>
 
         <div>

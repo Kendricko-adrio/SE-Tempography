@@ -14,7 +14,7 @@
                 <h1 class="jumbotron-heading">YOUR CART</h1>
              </div>
         </section>
-        
+
         <div class="container mb-4">
             <div class="row">
                 <div class="col-12">
@@ -39,6 +39,7 @@
                                 <form method="post" action="updateCart">
                                     @csrf
                                 <?php $totalPrice+=$data['PhotoPrice'];?>
+                                {{$index}}
                                 <tr>
                                     <td id="photo"><img src="{{ asset('/' . $data['PhotoURL']) }}"></td>
                                     <td>{{ $data['PhotoName'] }}</td>
@@ -47,7 +48,7 @@
                                     <input type="hidden" name="itemId" value="{{ $data['Id'] }}">
                                     <td class="text-right"></td>
                                     <td class="text-right"><button type="submit" id="delete" name="delete" value="Delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                                    
+
                                 </tr>
                                 </form>
                                 @endforeach
@@ -73,7 +74,7 @@
                                     @else
                                     <td class="text-right">0 IDR</td>
                                     @endif
-                                    
+
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -98,20 +99,23 @@
                             <button class="btn btn-block btn-light">Continue Shopping</button>
                             </form>
                         </div>
-                        
+
                         <div class="col-sm-12 col-md-6 text-right">
                             @if ($cartData)
-                            <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                            <form action="/checkout" method="POST">
+                                @csrf
+                                <input type="submit" class="btn btn-lg btn-block btn-success text-uppercase" value="Checkout">
+                            </form>
                             @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
-        
- 
+
+
+
+
 
 
 @stop
