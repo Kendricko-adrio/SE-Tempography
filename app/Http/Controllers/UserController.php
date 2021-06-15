@@ -6,6 +6,7 @@ use App\photo;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Auth;
 
 class UserController extends Controller
 {
@@ -37,4 +38,19 @@ class UserController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function postLogin(Request $req){
+        $email = $req->email;
+        $password = $req->password;
+        
+        if(Auth::attempt(['email'=>$email,'password'=>$password])){
+
+                $token = Auth::getRecallerName();
+            return redirect('/');
+        }
+        
+        return redirect('/login')->withErrors(['msg', 'Invalid email or password']);
+    }
+
+
 }

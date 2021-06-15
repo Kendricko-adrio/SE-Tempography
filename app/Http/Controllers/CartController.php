@@ -24,7 +24,8 @@ class CartController extends Controller
             "PhotoName"=>$data->PhotoName,
             "PhotoURL"=>$data->PhotoURL,
             "PhotoDescription"=>$data->PhotoDescription,
-            "PhotoPrice"=>$data->PhotoPrice
+            "PhotoPrice"=>$data->PhotoPrice,
+            "Id"=>$data->id
         );
 
         session()->put('shoppingCart',$cart);
@@ -34,5 +35,37 @@ class CartController extends Controller
     public function getCart(){
         $cart=session()->get('shoppingCart');
         return view('cart',['cartData'=>$cart]);
+    }
+
+
+
+    public function updateCart(Request $req){
+        $datas=photo::where('Id',$req->itemId)->get();
+
+        foreach($datas as $temp){
+            $data=$temp;
+         }
+        
+        $cart=session()->get('shoppingCart');
+        if (isset($_POST['delete'])) {
+            unset($cart[$req->itemId]);
+        }else{
+            if($req->qty<=0){
+                unset($cart[$req->itemId]);
+    
+            }else{
+                $cart[$req->itemId]=array(
+                "itemId"=>$data->id,
+                "image"=>$data->image,
+                "itemName"=>$data->itemName,
+                "storeName"=>$data->storeName,
+                "price"=>$data->price,
+                "qty"=>$req->qty
+                );
+            }
+        }
+
+        session()->put('shoppingCart',$cart);
+        return redirect()->back();
     }
 }
