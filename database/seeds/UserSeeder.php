@@ -16,7 +16,8 @@ class UserSeeder extends Seeder
             [
                 'name'=>"cody tanaka",
                 'email'=>"codytanaka@ymail.com",
-                'password'=>"123456"
+                'password'=>"123456",
+                'profile_image'=>'/image/photo1.jpg'
                 ]
             ]);
     }

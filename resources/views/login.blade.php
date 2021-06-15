@@ -14,7 +14,7 @@
             <input class="component button btn-danger btn" type="submit" value="Login">
         </form>
         <h4>Does not have account?</h4>
-        <button type="button" class="button btn btn-warning">Register Account</button>
+        <button type="button" class="button btn btn-warning"><a href="{{url('register')}}">Register Account</a> </button>
     </div>
 </div>
 @stop

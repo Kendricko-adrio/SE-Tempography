@@ -13,6 +13,9 @@ class UserController extends Controller
 
     public function getProfile($id){
         $user = User::find($id);
+        if($user == null){
+            return Redirect()->back();
+        }
         // dd($user);
         $post = photo::where('user_id', $user->id)->get();
         // dd($post);
