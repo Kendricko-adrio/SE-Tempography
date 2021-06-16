@@ -42,7 +42,7 @@ class UserController extends Controller
         
         if(Auth::attempt(['email'=>$email,'password'=>$password])){
 
-                $token = Auth::getRecallerName();
+            $token = Auth::getRecallerName();
             return redirect('/');
         }
         
