@@ -39,7 +39,7 @@
                                 <form method="post" action="updateCart">
                                     @csrf
                                 <?php $totalPrice+=$data['PhotoPrice'];?>
-                                {{$index}}
+                                {{-- {{$index}} --}}
                                 <tr>
                                     <td id="photo"><img src="{{ asset('/' . $data['PhotoURL']) }}"></td>
                                     <td>{{ $data['PhotoName'] }}</td>
@@ -68,11 +68,11 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td>Shipping</td>
+                                    <td></td>
                                     @if ($cartData)
-                                    <td class="text-right">9000 IDR</td>
+                                    <td class="text-right"></td>
                                     @else
-                                    <td class="text-right">0 IDR</td>
+                                    <td class="text-right"></td>
                                     @endif
 
                                 </tr>
@@ -83,7 +83,7 @@
                                     <td></td>
                                     <td><strong>Total</strong></td>
                                     @if ($cartData)
-                                    <td class="text-right"><strong>{{$totalPrice+9000}}</strong></td>
+                                    <td class="text-right"><strong>{{$totalPrice}}</strong></td>
                                     @else
                                     <td class="text-right"><strong>{{$totalPrice}}</strong></td>
                                     @endif

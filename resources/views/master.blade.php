@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             @if (Auth::user() == null)
             <li class="nav-item">
@@ -32,6 +32,9 @@
             @else
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/cart')}}">My Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('/upload')}}">Upload</a>
               </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/logout')}}">Log Out</a>
@@ -75,17 +78,12 @@
           <a class="tw-ic">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
+    
           <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <a class="ins-ic">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="pin-ic">
-            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
           </a>
         </div>
       </div>

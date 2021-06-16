@@ -40,6 +40,10 @@ class CartController extends Controller
     }
 
     public function postCart(Request $request){
+        if(!Auth::check()){//kalo lom login maka login dulu
+            return redirect('/login');
+        }
+
         $cart = session()->get('shoppingCart');
         // dd($cart);
         if($cart == 0){

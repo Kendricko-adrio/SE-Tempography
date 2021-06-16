@@ -12,8 +12,10 @@ Route::get('/register', 'UserController@getRegister');
 
 Route::post('/register', 'UserController@registration');
 Route::get('/user/{id}', 'UserController@getProfile');
+Route::get('/upload','uploadController@loadPage');
 
 Route::post('/addToCart','CartController@addToCart');
 Route::post('updateCart','CartController@updateCart');
 Route::post('/postLogin','UserController@postLogin');
+Route::post('/postNewPhoto','uploadController@postNewPhoto');
 Route::get('/logout', 'UserController@getLogout');
