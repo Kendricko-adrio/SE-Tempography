@@ -1,3 +1,7 @@
+body, html {
+  height: 100%;
+}
+
 .jumbotron {
   background-color: #3d3d3d;
 }
@@ -24,8 +28,14 @@
 }
 
 .jumbotron .container .description .image {
-  width: 100px;
-  height: 100px;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20% 10%;
+     object-position: 20% 10%;
+  border: 5px solid black;
 }
 
 .jumbotron .container .description .detail {
@@ -39,5 +49,19 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.content {
+  min-height: 50%;
+}
+
+.asset {
+  width: 15rem;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20% 10%;
+     object-position: 20% 10%;
+  border: 5px solid black;
 }
 /*# sourceMappingURL=user.css.map */

@@ -22,6 +22,12 @@ body, html{
             flex-direction: column;
             .component{
                 margin-top: 20px;
+
+            }
+            .login-button{
+                display: flex;
+                justify-content: center;
+                align-content: center;
             }
             .button{
                 width: 30%;

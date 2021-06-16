@@ -24,6 +24,12 @@
     </div>
     <div class="container">
 
+          @if (Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{Session::get('success')}}
+            </div>
+          @endif
+
         <p id="judul">Today's highlight</p>
         <div class="row p-2">
             @foreach ($photo as $temp)
