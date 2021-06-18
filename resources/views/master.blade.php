@@ -36,6 +36,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{url('/upload')}}">Upload</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('/myhistory')}}">History</a>
+              </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/logout')}}">Log Out</a>
               </li>
@@ -54,8 +57,9 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}" method="POST">
+              @csrf
+            <input name="name" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
@@ -78,7 +82,7 @@
           <a class="tw-ic">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-    
+
           <a class="li-ic">
             <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>

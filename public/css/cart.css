@@ -1,3 +1,11 @@
 #photo img{
     width:5vw;
 }
+
+body, html{
+    height: 80%;
+}
+
+main{
+    min-height: 100%;
+}

@@ -1,0 +1,22 @@
+body, html {
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+}
+
+main .container {
+  padding-top: 100px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20% 10%;
+     object-position: 20% 10%;
+  border: 5px solid black;
+}
+/*# sourceMappingURL=search.css.map */

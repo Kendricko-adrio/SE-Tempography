@@ -14,7 +14,7 @@
             <input class="component" name="email" type="email" placeholder="Email">
             <input class="component" name="password" type="password" placeholder="Password">
             <input class="component" name="confirm" type="password" placeholder="Confirm Password">
-            <input class="component button btn-danger btn" type="submit" value="Login">
+            <input class="component button btn-danger btn" type="submit" value="Register">
         </form>
 
     </div>

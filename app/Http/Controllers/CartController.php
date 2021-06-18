@@ -57,6 +57,7 @@ class CartController extends Controller
         $header = new TransactionHeader;
         $header->user_id = $user->id;
         $header->transaction_status_id = '2';
+        $header->created_at = now();
         $header->save();
         // dd($header->id);
         foreach($cart as $index => $value){
